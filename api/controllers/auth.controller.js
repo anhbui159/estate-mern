@@ -30,7 +30,7 @@ export const signin = async (req, res, next) => {
         const token = jwt.sign({id:validUser._id}, process.env.JWT_SECRET);
         const {password: pass, ...userInfo} = validUser._doc
         res.cookie('token', token, {httpOnly: true}).status(200).json(userInfo);
-    } catch {
+    } catch(error) {
         next(error)
     }
 }
@@ -52,7 +52,7 @@ export const google = async(req, res,next) => {
             const { password: pass, ...userInfo} = newUser._doc;
             res.cookie('access_token', token, {httpOnly: true}).status(200).json(userInfo);
         }
-    } catch {
+    } catch(error) {
         next(error);
     }
 }
