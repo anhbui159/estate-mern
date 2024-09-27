@@ -68,6 +68,10 @@ export default function SignIn() {
         <OAuth />
       </form>
       <div className="flex gap-2 mt-5">
+        <p>
+          Currently live server is having trouble connecting to MongoDB, please
+          use the demo account with ID:"admin" and password:"password"
+        </p>
         <p>Dont have an account?</p>
         <Link to={"/sign-up"}>
           <span className="text-blue-700">Sign up</span>
